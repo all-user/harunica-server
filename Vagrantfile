@@ -65,6 +65,11 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    . /vagrant/config/vagrant_provision/gem.sh
+    sudo apt-get install build-essential -y
+    sudo apt-get install mysql-server libmysqlclient-dev -y
+    git clone https://github.com/mosop/harunica-server
+    cd harunica-server
+    gem install bundler
+    bundle
   SHELL
 end
