@@ -5,3 +5,4 @@ curl -sSL https://get.rvm.io | bash -s stable --ruby
 rvm install 2.2.2
 rvm --default use 2.2.2
 sudo apt-get install git -y
+sudo usermod -a -G rvm vagrant
